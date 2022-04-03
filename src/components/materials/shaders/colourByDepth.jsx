@@ -66,9 +66,9 @@ export function DepthColourShader({ bounds, green, props }) {
 
   return (
     <>
-      <Html>
+      {/* <Html>
         <a.h1>{x.to((x) => x.toFixed(2))}</a.h1>
-      </Html>
+      </Html> */}
       <AnimatedBasicShaderClass
         {...props}
         uTexture={texture}

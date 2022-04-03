@@ -2,6 +2,9 @@ import { useEffect, useRef } from "react"
 import styled from "styled-components"
 import { TextureLoader } from "three"
 import { useStore } from "../../state/store"
+
+import CloudIcon from "./cloudicon.png"
+
 function Interface() {
   const inputRef = useRef()
 
@@ -37,16 +40,50 @@ function Interface() {
 
   return (
     <UIHolder>
-      SKYLANDS
+      {/* SKYLANDS */}
+      {/* <UploadBtn
+        style={{ pointerEvents: "auto" }}
+        ref={inputRef}
+        type="file"
+        accept="image/*"
+      ></UploadBtn> */}
+      <UploadBtn htmlFor="upload-photo">
+        <CloudIconHolder src={CloudIcon} />
+      </UploadBtn>
       <input
         style={{ pointerEvents: "auto" }}
         ref={inputRef}
         type="file"
         accept="image/*"
-      ></input>
+        name="photo"
+        id="upload-photo"
+      />
     </UIHolder>
   )
 }
+
+const CloudIconHolder = styled.img`
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+`
+
+const UploadBtn = styled.label`
+  pointer-events: auto;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border: #ece8eb solid 2px;
+
+  border-radius: 4vh;
+  height: 2vh;
+  font-size: 2vh;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 const UIHolder = styled.div`
   pointer-events: none;
@@ -55,6 +92,25 @@ const UIHolder = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
+
+  /* input[type="file"] {
+    background: red;
+  }
+
+  .custom-file-upload {
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    cursor: pointer;
+  } */
+
+  label {
+    cursor: pointer;
+    /* Style as you please, it will become the visible UI component. */
+  }
+  #upload-photo {
+   opacity: 0;
+   position: absolute;
+   z-index: -1;
 `
 
 export default Interface
