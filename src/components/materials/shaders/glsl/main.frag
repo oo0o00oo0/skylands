@@ -11,8 +11,8 @@
       float zValue =  vPos.z / vBounds ;
       vec4 textColour = texture2D(uTexture, vec2(vUv.x,vUv.y ) );
  
-      // vec3 colour = vec3(textColour) ; 
-      vec3 colour = vec3(vNormal.z, vNormal.z + textColour.z , (vUv.x * vUv.y)) * .8; 
-      gl_FragColor = vec4(colour, 1.0);
+      vec3 colour = vec3(textColour) ; 
+      // vec3 colour = vec3(vNormal.z, vNormal.z + textColour.z , (vUv.x * vUv.y)) * .6; 
+      gl_FragColor = vec4(vUv.x * vUv.y, colour.z * 2.4,  vNormal.z, 1.0) * 0.5;
 
 }
