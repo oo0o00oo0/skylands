@@ -13,6 +13,7 @@
  
       vec3 colour = vec3(textColour) ; 
       // vec3 colour = vec3(vNormal.z, vNormal.z + textColour.z , (vUv.x * vUv.y)) * .6; 
-      gl_FragColor = vec4(vUv.x * vUv.y, colour.z * 2.4,  vNormal.z, 1.0) * 0.5;
+      // gl_FragColor = vec4(vUv.x * vUv.y, colour.z * 4.4,  vNormal.z, 1.0) * 0.5;
+      gl_FragColor = vec4(vUv.x * vUv.y, colour.z * 2.,  vNormal.z, 1.0) * 0.5;
 
 }
